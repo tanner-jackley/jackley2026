@@ -276,6 +276,21 @@ section {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* STORY PAGE */
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  margin-top: -50px;
+}
+
+.video-container video {
+  border-radius: 1rem;
+}
+
 /* FOOTER */
 
 footer {
