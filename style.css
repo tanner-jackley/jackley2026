@@ -5,10 +5,10 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Playfair Display", serif;
 }
 
 body {
-  font-family: "Playfair Display", serif;
   margin: 0;
   background-color: rgb(53, 53, 53);
 }
@@ -82,9 +82,12 @@ p {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-label {
-  color: rgb(240, 240, 240);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+p.subtitle {
+  text-shadow: none;
+}
+
+.checkbox:hover {
+  color: rgb(28, 28, 28);
 }
 
 .logo {
@@ -193,7 +196,7 @@ label {
   border-color: black;
   border-width: 1px;
   border-style: solid;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
 }
 
 .btn:hover {
@@ -277,12 +280,30 @@ section {
   justify-content: center;
   align-items: center;
   height: 68vh;
-  gap: 2rem;
+  margin-top: -50px;
 }
 
-.details-container h1,
-.details-container p {
-  color: rgb(240, 240, 240);
+.details-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(250, 250, 250);
+  padding: 2rem;
+  gap: 2rem;
+  text-align: center;
+  width: 60%;
+  height: 75%;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.details-background:hover {
+  background-color: rgba(240, 240, 240);
+}
+
+.details-background h1,
+.details-background p {
+  color: rgb(28, 28, 28);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -363,7 +384,7 @@ footer p {
 
 footer a:hover {
   color: rgb(150, 150, 150);
-  text-decoration-color: rgb(150, 150, 150);
+  text-decoration: none;
 }
 
 .footer-nav {
