@@ -77,6 +77,16 @@ a:hover {
   text-decoration-color: rgb(28, 28, 28);
 }
 
+p {
+  color: rgb(240, 240, 240);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+label {
+  color: rgb(240, 240, 240);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .logo {
   font-size: 2rem;
   font-weight: 500;
@@ -278,6 +288,10 @@ section {
 
 /* STORY PAGE */
 
+#story {
+  position: relative;
+}
+
 .video-container {
   display: flex;
   flex-direction: column;
@@ -291,6 +305,49 @@ section {
   border-radius: 1rem;
 }
 
+/* REGISTRY PAGE */
+
+#registry {
+  position: relative;
+}
+
+/* RSVP PAGE */
+
+#rsvp {
+  position: relative;
+}
+
+#entire-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: blue;
+}
+
+.label {
+  color: rgb(240, 240, 240);
+  display: block;
+  font-size: 1rem;
+}
+
+.button,
+.button.is-link {
+  background-color: rgb(28, 28, 28);
+  color: rgb(240, 240, 240);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.button.is-link:hover {
+  background-color: rgb(240, 240, 240);
+  color: rgb(28, 28, 28);
+}
+
 /* FOOTER */
 
 footer {
@@ -302,6 +359,11 @@ footer {
 footer p {
   text-align: center;
   color: rgb(240, 240, 240);
+}
+
+footer a:hover {
+  color: rgb(150, 150, 150);
+  text-decoration-color: rgb(150, 150, 150);
 }
 
 .footer-nav {

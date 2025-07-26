@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RSVP</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav id="desktop-nav" class="header-nav">
@@ -40,20 +44,39 @@
       </div>
     </nav>
     <section id="rsvp">
-      <div id="entireForm">
-        <form id="form">
-          <label>Look up your invitation:</label>
-          <div>
-            <input name="name" type="text" placeholder="Firstname Lastname" />
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
+            <div id="entireForm">
+              <form id="form">
+                <div class="field">
+                  <label class="label">Look up your invitation:</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      name="name"
+                      type="text"
+                      placeholder="Firstname Lastname"
+                    />
+                  </div>
+                  <p class="help">
+                    Enter your first and last name exactly as it appears on your
+                    invitation. If there is more than one name, enter just one
+                    of them.
+                  </p>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                  <div class="control">
+                    <button id="submit" class="button is-link" type="submit">
+                      Continue
+                    </button>
+                  </div>
+                </div>
+                <div id="output"></div>
+              </form>
+            </div>
           </div>
-          <p>
-            Enter your first and last name exactly as it appears on your
-            invitation. If there is more than one name, enter just one of them.
-          </p>
-          <button type="submit">Continue</button>
-          <div id="output"></div>
-        </form>
-        <script src="simple_rsvp.js"></script>
+        </div>
       </div>
     </section>
     <footer>
@@ -69,5 +92,6 @@
       <p>Copyright &#169; 2025 Tanner Jackley. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="styled_rsvp.js"></script>
   </body>
 </html>
