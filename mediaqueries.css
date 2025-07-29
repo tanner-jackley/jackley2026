@@ -19,13 +19,6 @@
   .experience-details-container {
     margin-top: 2rem;
   }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
   section,
   .section-container {
     height: fit-content;

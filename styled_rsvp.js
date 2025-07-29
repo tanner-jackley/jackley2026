@@ -5,13 +5,13 @@ document.getElementById("form").addEventListener("submit", function (event) {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://script.google.com/macros/s/AKfycbyhrQsdnfesH9P0o15SuZ0nCadyx2_voRIcpewTmqcXWHVrgGorN0LVpJjLeHR5B0EaTg/exec?name=" +
+    "https://script.google.com/macros/s/AKfycbyv6vxm2w9zpVfB43SyenDdDgZFwXkNN7LBmUXPQxXKgAPvpYeYO24s4yUJv103T00a7A/exec?name=" +
       name,
     true
   );
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      document.getElementById("submit").classList.remove("is-loading");
+      document.getElementById("submit").classList.remove("is-loading"); 
       var idAndNames = xhr.responseText;
       if (idAndNames === "Name not found") {
         document.getElementById(
@@ -91,7 +91,7 @@ function create_rsvpPage1(idAndNames) {
 
 function submitForm(data) {
   const url =
-    "https://script.google.com/macros/s/AKfycbyhrQsdnfesH9P0o15SuZ0nCadyx2_voRIcpewTmqcXWHVrgGorN0LVpJjLeHR5B0EaTg/exec";
+    "https://script.google.com/macros/s/AKfycbyv6vxm2w9zpVfB43SyenDdDgZFwXkNN7LBmUXPQxXKgAPvpYeYO24s4yUJv103T00a7A/exec";
   const xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
