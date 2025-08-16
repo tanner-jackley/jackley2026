@@ -48,7 +48,7 @@ function create_rsvpPage1(idAndNames) {
 
   document.getElementById("entireForm").innerHTML = `
   <div class="content">
-      <p>We found your RSVP!</p>
+      <p style="color: rgb(28, 28, 28)">We found your RSVP!</p>
       ${data
         .map(
           (person) => `
@@ -98,7 +98,23 @@ function submitForm(data) {
   xhr.onload = function () {
     if (xhr.status === 200 && xhr.responseText === "Success") {
       document.getElementById("submit").classList.remove("is-loading");
-      document.getElementById("entireForm").innerHTML = `<div>Success!</div>`;
+      document.getElementById("entireForm").innerHTML = `<div>Success!</div>
+      <div title="Add to Calendar" class="addeventatc">
+      Add to Calendar
+      <span class="start">05/30/2026 02:00 PM</span>
+      <span class="end">05/30/2026 07:00 PM</span>
+      <span class="timezone">America/Chicago</span>
+      <span class="title">Lucy and Tanner's Wedding</span>
+      <span class="description"
+        >Join us for a beautiful wedding celebration!</span
+      >
+      <span class="location"
+        >4500 Little Blue Pkwy, Independence, MO 64057</span
+      >
+    </div>`;
+      if (window.addeventatc) {
+        addeventatc.refresh();
+      }
     } else {
       return; // error
     }
