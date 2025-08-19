@@ -278,13 +278,13 @@ section {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 4.5rem;
   object-fit: cover;
   display: block;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 0.5rem;
 }
 
@@ -340,6 +340,13 @@ section {
   margin: 2rem 0;
   padding-bottom: 2rem;
   margin-top: -50px;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  border-radius: 1rem;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -523,7 +530,7 @@ section {
 }
 
 .registry-container:hover {
-  background: rgb(28, 28, 28);
+  background: rgb(163, 163, 163);
 }
 
 /* RSVP PAGE */
