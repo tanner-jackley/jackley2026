@@ -471,7 +471,7 @@ section {
 /* FOOTER */
 
 footer {
-  height: 26vh;
+  height: 35vh;
   margin: 0 1rem;
   background-color: rgb(28, 28, 28);
 }
@@ -498,7 +498,7 @@ footer a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-top: 3rem;
 }
 
 .countDown__cont {

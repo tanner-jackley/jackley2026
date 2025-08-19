@@ -14,13 +14,10 @@ class Countdown {
   get TIMESTAMP_WEEK() {
     return 7 * this.TIMESTAMP_DAY;
   }
-  get TIMESTAMP_YEAR() {
-    return 365 * this.TIMESTAMP_DAY;
+  get TIMESTAMP_MONTH() {
+    return 30 * this.TIMESTAMP_DAY; // Approximate months as 30 days
   }
 
-  /**
-   * @param {{}} userOptions structure like this.options below
-   */
   constructor(userOptions) {
     this.options = {
       cont: null,
@@ -34,19 +31,17 @@ class Countdown {
         second: 0,
       },
       endCallback: null,
-      outputFormat: "year|week|day|hour|minute|second",
+      outputFormat: "month|day|hour|minute", // only show these
       outputTranslation: {
-        year: "Years",
-        week: "Weeks",
+        month: "Months",
         day: "Days",
         hour: "Hours",
         minute: "Minutes",
-        second: "Seconds",
       },
     };
 
     this.lastTick = null;
-    this.intervalsBySize = ["year", "week", "day", "hour", "minute", "second"];
+    this.intervalsBySize = ["month", "day", "hour", "minute"];
     this.elementClassPrefix = "countDown__";
     this.interval = null;
     this.digitConts = {};
@@ -58,13 +53,10 @@ class Countdown {
     let date, dateData;
 
     this._fixCompatibility();
-
     date = this._getDate(this.options.date);
-
     dateData = this._prepareTimeByOutputFormat(date);
 
     this._writeData(dateData);
-
     this.lastTick = dateData;
 
     if (this.options.countdown && date.getTime() <= Date.now()) {
@@ -100,12 +92,6 @@ class Countdown {
     this.interval = null;
   }
 
-  /**
-   * @param {Date|Object|String|Number} date
-   *
-   * @returns {Date}
-   * @private
-   */
   _getDate(date) {
     if (typeof date === "object") {
       if (date instanceof Date) {
@@ -144,60 +130,17 @@ class Countdown {
     }
   }
 
-  /**
-   * @param {Date} dateObj
-   *
-   * @return {{}}
-   * @private
-   */
   _prepareTimeByOutputFormat(dateObj) {
-    let usedIntervals,
-      output = {},
-      timeDiff;
+    let output = {};
+    let diff = this._getPreciseDiff(dateObj, new Date());
 
-    usedIntervals = this.intervalsBySize.filter((item) => {
-      return this.options.outputFormat.split("|").indexOf(item) !== -1;
-    });
-
-    timeDiff = this.options.countdown
-      ? dateObj.getTime() - Date.now()
-      : Date.now() - dateObj.getTime();
-
-    usedIntervals.forEach((item) => {
-      let value;
-      if (timeDiff > 0) {
-        switch (item) {
-          case "year":
-            value = Math.trunc(timeDiff / this.TIMESTAMP_YEAR);
-            timeDiff -= value * this.TIMESTAMP_YEAR;
-            break;
-          case "week":
-            value = Math.trunc(timeDiff / this.TIMESTAMP_WEEK);
-            timeDiff -= value * this.TIMESTAMP_WEEK;
-            break;
-          case "day":
-            value = Math.trunc(timeDiff / this.TIMESTAMP_DAY);
-            timeDiff -= value * this.TIMESTAMP_DAY;
-            break;
-          case "hour":
-            value = Math.trunc(timeDiff / this.TIMESTAMP_HOUR);
-            timeDiff -= value * this.TIMESTAMP_HOUR;
-            break;
-          case "minute":
-            value = Math.trunc(timeDiff / this.TIMESTAMP_MINUTE);
-            timeDiff -= value * this.TIMESTAMP_MINUTE;
-            break;
-          case "second":
-            value = Math.trunc(timeDiff / this.TIMESTAMP_SECOND);
-            timeDiff -= value * this.TIMESTAMP_SECOND;
-            break;
-        }
-      } else {
-        value = "00";
+    this.options.outputFormat.split("|").forEach((unit) => {
+      if (diff.hasOwnProperty(unit)) {
+        let value = diff[unit];
+        output[unit] = (
+          ("" + value).length < 2 ? "0" + value : "" + value
+        ).split("");
       }
-      output[item] = (("" + value).length < 2 ? "0" + value : "" + value).split(
-        ""
-      );
     });
 
     return output;
@@ -217,10 +160,6 @@ class Countdown {
       };
   }
 
-  /**
-   * @param {{}} data
-   * @private
-   */
   _writeData(data) {
     let code = `<div class="${this.elementClassPrefix}cont">`,
       intervalName;
@@ -252,13 +191,6 @@ class Countdown {
     this.lastTick = data;
   }
 
-  /**
-   * @param {Number} newDigit
-   * @param {Number} lastDigit
-   *
-   * @returns {String}
-   * @private
-   */
   _getDigitElementString(newDigit, lastDigit) {
     return `<div class="${this.elementClassPrefix}digit_last_placeholder">
                         <div class="${this.elementClassPrefix}digit_last_placeholder_inner">
@@ -276,10 +208,6 @@ class Countdown {
                     </div>`;
   }
 
-  /**
-   * @param {{}} data
-   * @private
-   */
   _updateView(data) {
     for (let intervalName in data) {
       if (data.hasOwnProperty(intervalName)) {
@@ -301,13 +229,6 @@ class Countdown {
     this.lastTick = data;
   }
 
-  /**
-   * @param {String} intervalName
-   * @param {String} index
-   *
-   * @returns {HTMLElement}
-   * @private
-   */
   _getDigitCont(intervalName, index) {
     if (!this.digitConts[`${intervalName}_${index}`]) {
       this.digitConts[`${intervalName}_${index}`] =
@@ -321,46 +242,22 @@ class Countdown {
     return this.digitConts[`${intervalName}_${index}`];
   }
 
-  /**
-   * @param {String} intervalName
-   *
-   * @returns {String}
-   * @private
-   */
   _getIntervalContClassName(intervalName) {
     return `${this.elementClassPrefix}interval_cont_${intervalName}`;
   }
 
-  /**
-   * @returns {String}
-   * @private
-   */
   _getIntervalContCommonClassName() {
     return `${this.elementClassPrefix}interval_cont`;
   }
 
-  /**
-   * @param {String} index
-   *
-   * @returns {String}
-   * @private
-   */
   _getDigitContClassName(index) {
     return `${this.elementClassPrefix}digit_cont_${index}`;
   }
 
-  /**
-   * @returns {String}
-   * @private
-   */
   _getDigitContCommonClassName() {
     return `${this.elementClassPrefix}digit_cont`;
   }
 
-  /**
-   * @param {{}} options
-   * @param {{}} userOptions
-   */
   _assignOptions(options, userOptions) {
     for (let i in options) {
       if (options.hasOwnProperty(i) && userOptions.hasOwnProperty(i)) {
@@ -375,6 +272,50 @@ class Countdown {
         }
       }
     }
+  }
+
+  /**
+   * Returns precise diff between two dates in months, days, hours, minutes.
+   * Always returns integers ≥ 0.
+   * @param {Date} targetDate
+   * @param {Date} now
+   */
+  _getPreciseDiff(targetDate, now) {
+    let years = targetDate.getFullYear() - now.getFullYear();
+    let months = targetDate.getMonth() - now.getMonth() + years * 12;
+    let days = targetDate.getDate() - now.getDate();
+    let hours = targetDate.getHours() - now.getHours();
+    let minutes = targetDate.getMinutes() - now.getMinutes();
+
+    // Borrow units if negative
+    if (minutes < 0) {
+      minutes += 60;
+      hours--;
+    }
+    if (hours < 0) {
+      hours += 24;
+      days--;
+    }
+    if (days < 0) {
+      // Get days in the previous month of targetDate
+      let prevMonth = new Date(
+        targetDate.getFullYear(),
+        targetDate.getMonth(),
+        0
+      );
+      days += prevMonth.getDate();
+      months--;
+    }
+    if (months < 0) {
+      months += 12;
+    }
+
+    return {
+      month: months < 0 ? 0 : months,
+      day: days < 0 ? 0 : days,
+      hour: hours < 0 ? 0 : hours,
+      minute: minutes < 0 ? 0 : minutes,
+    };
   }
 }
 
