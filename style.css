@@ -435,7 +435,7 @@ video {
 }
 
 /* The actual content */
-.content {
+.timeline-content {
   padding: 20px 30px;
   background-color: white;
   position: relative;
@@ -545,7 +545,6 @@ video {
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
-  color: blue;
 }
 
 .label {
@@ -568,6 +567,21 @@ video {
 .button.is-link:hover {
   background-color: rgb(240, 240, 240);
   color: rgb(28, 28, 28);
+}
+
+.rsvp-container {
+  text-align: center;
+}
+
+.rsvp-header {
+  color: rgb(240, 240, 240);
+}
+
+.guest-list {
+  list-style-type: none;
+  padding: 0;
+  color: rgb(240, 240, 240);
+  padding-bottom: 1rem;
 }
 
 /* FOOTER */

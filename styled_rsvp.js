@@ -5,7 +5,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://script.google.com/macros/s/AKfycbwdi7EHtwO6PMdrG-4At66P6U9wCmOwTgSC0nqn3gRdrtEo__Q6xqcb1OJ4sj2_Ha2Ctg/exec?name=" +
+    "https://script.google.com/macros/s/AKfycbyPKJfgkJuoWKFxbbtlcP01DZtSBdrbqLeO61gRj6Lvc_khhFIVzKH_3Xst4y-M8faN2g/exec?name=" +
       name,
     true
   );
@@ -48,7 +48,7 @@ function create_rsvpPage1(idAndNames) {
 
   document.getElementById("entireForm").innerHTML = `
   <div class="content">
-      <p style="color: rgb(28, 28, 28)">We found your RSVP!</p>
+      <p>We found your RSVP!</p>
       ${data
         .map(
           (person) => `
@@ -91,36 +91,62 @@ function create_rsvpPage1(idAndNames) {
 
 function submitForm(data) {
   const url =
-    "https://script.google.com/macros/s/AKfycbwdi7EHtwO6PMdrG-4At66P6U9wCmOwTgSC0nqn3gRdrtEo__Q6xqcb1OJ4sj2_Ha2Ctg/exec";
+    "https://script.google.com/macros/s/AKfycbyPKJfgkJuoWKFxbbtlcP01DZtSBdrbqLeO61gRj6Lvc_khhFIVzKH_3Xst4y-M8faN2g/exec";
   const xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
   xhr.onload = function () {
-    if (xhr.status === 200 && xhr.responseText === "Success") {
-      document.getElementById("submit").classList.remove("is-loading");
-      document.getElementById("entireForm").innerHTML = `<div>Success!</div>
-      <div title="Add to Calendar" class="addeventatc">
-      Add to Calendar
-      <span class="start">05/30/2026 02:00 PM</span>
-      <span class="end">05/30/2026 07:00 PM</span>
-      <span class="timezone">America/Chicago</span>
-      <span class="title">Lucy and Tanner's Wedding</span>
-      <span class="description"
-        >Join us for a beautiful wedding celebration!</span
-      >
-      <span class="location"
-        >4500 Little Blue Pkwy, Independence, MO 64057</span
-      >
-    </div>`;
-      if (window.addeventatc) {
-        addeventatc.refresh();
+    if (xhr.status === 200) {
+      try {
+        const response = JSON.parse(xhr.responseText);
+
+        if (response.success) {
+          document.getElementById("submit").classList.remove("is-loading");
+
+          // Build guest list HTML
+          let guestListHtml = `<div class="rsvp-container"><h2 class="rsvp-header">RSVP Received! ✓</h2>`;
+          guestListHtml += `<p>We have recorded the following responses:</p><ul class="guest-list">`;
+          response.guests.forEach((guest) => {
+            guestListHtml += `<li>${guest.name}: ${guest.status}</li>`;
+          });
+          guestListHtml += `</ul>`;
+
+          // Add AddEvent calendar widget
+          guestListHtml += `
+            <div title="Add to Calendar" class="addeventatc">
+              Add to Calendar
+              <span class="start">05/30/2026 02:00 PM</span>
+              <span class="end">05/30/2026 07:00 PM</span>
+              <span class="timezone">America/Chicago</span>
+              <span class="title">Lucy and Tanner's Wedding</span>
+              <span class="description">Join us for a beautiful wedding celebration!</span>
+              <span class="location">4500 Little Blue Pkwy, Independence, MO 64057</span>
+            </div></div>
+          `;
+
+          // Replace form with results + calendar
+          document.getElementById("entireForm").innerHTML = guestListHtml;
+
+          // Refresh AddEvent script (so button initializes)
+          if (window.addeventatc) {
+            addeventatc.refresh();
+          }
+        } else {
+          document.getElementById("entireForm").innerHTML =
+            "<div>There was a problem recording your RSVP.</div>";
+        }
+      } catch (err) {
+        console.error("Error parsing response:", err, xhr.responseText);
       }
     } else {
-      return; // error
+      console.error("Server error:", xhr.status, xhr.responseText);
     }
   };
+
   xhr.onerror = function () {
-    return; // Request failed due to a network error or other issue
+    console.error("Network error");
   };
+
   xhr.send(JSON.stringify(data));
 }

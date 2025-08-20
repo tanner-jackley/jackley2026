@@ -19,10 +19,6 @@
   .experience-details-container {
     margin-top: 2rem;
   }
-  section,
-  .section-container {
-    height: fit-content;
-  }
   section {
     margin: 0 5%;
   }
