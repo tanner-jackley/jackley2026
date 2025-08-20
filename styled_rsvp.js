@@ -106,7 +106,7 @@ function submitForm(data) {
 
           // Build guest list HTML
           let guestListHtml = `<div class="rsvp-container"><h2 class="rsvp-header">RSVP Received! ✓</h2>`;
-          guestListHtml += `<p>We have recorded the following responses:</p><ul class="guest-list">`;
+          guestListHtml += `<p>We have recorded the following response(s):</p><ul class="guest-list">`;
           response.guests.forEach((guest) => {
             guestListHtml += `<li>${guest.name}: ${guest.status}</li>`;
           });
