@@ -45,14 +45,15 @@
   }
 
   /* Full-width containers */
-  .container {
+  .timeline-container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
   /* Make sure that all arrows are pointing leftwards */
-  .container::before {
+  .left::before,
+  .right::before {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
@@ -67,6 +68,35 @@
 
   /* Make all right containers behave like the left ones */
   .right {
-    left: 0%;
+    left: 0;
+  }
+
+  .gallery {
+    column-count: 1;
+  }
+
+  .countDown__cont {
+    flex-direction: column;
+    column-count: 2;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .details-container {
+    height: 75vh;
+    padding-bottom: 1rem;
+  }
+
+  .details-background {
+    width: 75%;
+    height: 75%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer p {
+    font-size: 12px;
   }
 }
