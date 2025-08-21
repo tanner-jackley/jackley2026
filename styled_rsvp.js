@@ -48,7 +48,7 @@ function create_rsvpPage1(idAndNames) {
 
   document.getElementById("entireForm").innerHTML = `
   <div class="content">
-      <p>We found your RSVP!</p>
+      <p class="label" style="color: var(--dark-color)">We found your RSVP!</p>
       ${data
         .map(
           (person) => `
@@ -106,7 +106,7 @@ function submitForm(data) {
 
           // Build guest list HTML
           let guestListHtml = `<div class="rsvp-container"><h2 class="rsvp-header">RSVP Received! ✓</h2>`;
-          guestListHtml += `<p>We have recorded the following response(s):</p><ul class="guest-list">`;
+          guestListHtml += `<h6>We have recorded the following response(s):</h6><ul class="guest-list">`;
           response.guests.forEach((guest) => {
             guestListHtml += `<li>${guest.name}: ${guest.status}</li>`;
           });

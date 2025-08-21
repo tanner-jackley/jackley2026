@@ -6,15 +6,15 @@
   --font-family: "Playfair Display", serif;
   --bg-color: rgb(53, 53, 53);
   --text-color: rgb(240, 240, 240);
-  --almost-black: rgb(28, 28, 28);
-  --almost-white: rgb(240, 240, 240);
+  --dark-color: rgb(28, 28, 28);
+  --light-color: rgb(240, 240, 240);
   --hover-bg-color: rgb(150, 150, 150, 0.5);
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: var(--font-family);
+  font-family: var(--font-family) !important;
   box-sizing: border-box;
 }
 
@@ -56,7 +56,7 @@ nav,
   width: 70%;
   z-index: 1000;
   background-color: rgb(120, 120, 120, 0.25);
-  border-color: var(--almost-black);
+  border-color: var(--dark-color);
   border-width: 1px;
   border-style: solid;
   border-radius: 10rem;
@@ -79,7 +79,7 @@ a {
 }
 
 a:hover {
-  color: var(--almost-black);
+  color: var(--dark-color);
   padding: 0.5rem;
   text-decoration: none;
 }
@@ -94,7 +94,7 @@ p.subtitle {
 }
 
 .checkbox:hover {
-  color: var(--almost-black);
+  color: var(--dark-color);
 }
 
 .logo {
@@ -103,7 +103,7 @@ p.subtitle {
 }
 
 .logo a:hover {
-  color: var(--almost-black);
+  color: var(--dark-color);
   padding: 0;
   cursor: pointer;
   text-decoration: none;
@@ -132,7 +132,7 @@ p.subtitle {
 .hamburger-icon span {
   height: 2px;
   width: 100%;
-  background-color: var(--almost-white);
+  background-color: var(--light-color);
   transition: all 300ms ease-in-out;
 }
 
@@ -140,7 +140,7 @@ p.subtitle {
   position: absolute;
   top: 130%;
   right: 0%;
-  background-color: var(--almost-black);
+  background-color: var(--dark-color);
   border-radius: 1rem;
   width: 500%;
   max-height: 0;
@@ -199,15 +199,15 @@ p.subtitle {
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
-  border-color: var(--almost-black);
+  border-color: var(--dark-color);
   border-width: 1px;
   border-style: solid;
   border-radius: 0.5rem;
 }
 
 .btn:hover {
-  background-color: var(--almost-black);
-  color: var(--almost-white);
+  background-color: var(--dark-color);
+  color: var(--light-color);
   cursor: pointer;
 }
 
@@ -316,7 +316,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--almost-white);
+  background-color: var(--light-color);
   padding: 2rem;
   gap: 2rem;
   text-align: center;
@@ -327,7 +327,7 @@ section {
 
 .details-background h1,
 .details-background p {
-  color: var(--almost-black);
+  color: var(--dark-color);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -366,7 +366,7 @@ video {
   content: "";
   position: absolute;
   width: 6px;
-  background-color: var(--almost-white);
+  background-color: var(--light-color);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -388,7 +388,7 @@ video {
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: var(--almost-white);
+  background-color: var(--light-color);
   border: 4px solid var(--bg-color);
   top: 15px;
   border-radius: 50%;
@@ -414,9 +414,9 @@ video {
   width: 0;
   z-index: 1;
   right: 30px;
-  border: medium solid var(--almost-white);
+  border: medium solid var(--light-color);
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent var(--almost-white);
+  border-color: transparent transparent transparent var(--light-color);
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -428,9 +428,9 @@ video {
   width: 0;
   z-index: 1;
   left: 30px;
-  border: medium solid var(--almost-white);
+  border: medium solid var(--light-color);
   border-width: 10px 10px 10px 0;
-  border-color: transparent var(--almost-white) transparent transparent;
+  border-color: transparent var(--light-color) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -441,14 +441,14 @@ video {
 /* The actual content */
 .timeline-content {
   padding: 20px 30px;
-  background-color: var(--almost-white);
+  background-color: var(--light-color);
   position: relative;
   border-radius: 6px;
 }
 
 .timeline-container p {
   margin: 0;
-  color: var(--almost-black);
+  color: var(--dark-color);
   text-shadow: none;
 }
 
@@ -508,7 +508,7 @@ video {
 .registry-container {
   padding: 1.5rem;
   flex: 1 1 45%;
-  background: var(--almost-white);
+  background: var(--light-color);
   border-radius: 2rem;
   text-align: center;
   min-width: 250px;
@@ -523,6 +523,8 @@ video {
 
 #rsvp {
   position: relative;
+
+  padding-bottom: 2rem;
 }
 
 #entire-form {
@@ -531,50 +533,103 @@ video {
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+  min-width: 60%;
+}
+
+.field {
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.is-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60%;
+}
+
+.rsvp-background {
+  background-color: var(--light-color);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  width: 60%;
+  height: 75%;
 }
 
 .label {
-  color: var(--almost-white);
+  color: var(--dark-color);
   display: block;
   font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.help {
+  color: var(--dark-color);
+  font-size: 0.875rem;
+  text-shadow: none;
 }
 
 .button,
 .button.is-link {
-  background-color: var(--almost-black);
-  color: var(--almost-white);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border-color: var(--almost-white);
+  background-color: var(--light-color);
+  color: var(--dark-color);
   cursor: pointer;
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1.5rem;
+  width: 8rem;
+  border-color: var(--dark-color);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
 }
 
 .button.is-link:hover {
-  background-color: var(--almost-white);
-  color: var(--almost-black);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  cursor: pointer;
 }
 
 .rsvp-container {
   text-align: center;
+  gap: 2rem;
+}
+
+.rsvp-container h6 {
+  color: var(--dark-color);
+  text-shadow: none;
 }
 
 .rsvp-header {
-  color: var(--text-color);
+  color: var(--dark-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .guest-list {
   list-style-type: none;
   padding: 0;
-  color: var(--text-color);
+  color: var(--dark-color);
   padding-bottom: 1rem;
+}
+
+.addeventatc {
+  font-family: var(--font-family);
 }
 
 /* FOOTER */
 
 footer {
   margin: 0 1rem;
-  background-color: var(--almost-black);
+  background-color: var(--dark-color);
   padding-bottom: 1rem;
 }
 
@@ -637,7 +692,7 @@ footer a:hover {
   display: flex;
   margin-left: 0.3em;
   margin-top: 0.3em;
-  font-size: 1.2em;
+  font-size: 1.75em;
   font-weight: bold;
   color: white;
   text-shadow: 0.1em 0.1em 0.1em #000000;
