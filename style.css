@@ -536,9 +536,6 @@ video {
   min-width: 60%;
 }
 
-.field {
-}
-
 .container {
   display: flex;
   justify-content: center;
