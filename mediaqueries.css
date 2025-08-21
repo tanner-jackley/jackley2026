@@ -72,10 +72,9 @@
   }
 
   .countDown__cont {
-    flex-direction: column;
     column-count: 2;
     align-items: center;
-    font-size: 10px;
+    font-size: 7px;
   }
 
   .details-container {
