@@ -106,11 +106,11 @@ function submitForm(data) {
 
           // Build guest list HTML
           let guestListHtml = `<div class="rsvp-container"><h2 class="rsvp-header">RSVP Received! ✓</h2>`;
-          guestListHtml += `<h6>We have recorded the following response(s):</h6><ul class="guest-list">`;
+          guestListHtml += `<div class="rsvp-response"><h6>We have recorded the following response(s):</h6><ul class="guest-list">`;
           response.guests.forEach((guest) => {
             guestListHtml += `<li>${guest.name}: ${guest.status}</li>`;
           });
-          guestListHtml += `</ul>`;
+          guestListHtml += `</ul></div>`;
 
           // Add AddEvent calendar widget
           guestListHtml += `
