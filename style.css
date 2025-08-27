@@ -19,12 +19,7 @@
 }
 
 body {
-  background-image: linear-gradient(
-    to bottom,
-    #f3e9d6 0%,
-    #d7cdc1 50%,
-    #aa9b83 100%
-  );
+  background-image: linear-gradient(to bottom, #e9e0d1, #d1d5c2);
   min-height: 100vh;
   margin: 0;
 }
@@ -51,6 +46,20 @@ nav,
   display: flex;
 }
 
+.nav-links {
+  font-size: 1.5rem;
+  gap: 2rem 32px;
+  list-style: none;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between; /* logo left, hamburger right */
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
 .header-nav {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(2px) saturate(180%);
@@ -62,16 +71,44 @@ nav,
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  justify-content: space-around;
+  justify-content: space-around; /* keep logo left & menu right */
   align-items: center;
-  height: 8vh;
+  height: 7vh;
   width: 70%;
   z-index: 1000;
-  background-color: rgb(120, 120, 120, 0.25);
+  background-color: rgba(120, 120, 120, 0.25);
   border-color: var(--dark-color);
+  transition: height 0.4s ease;
+  overflow: hidden;
 }
 
-.header-nav::after {
+.ham-header-nav {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+    inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between; /* keep logo left & menu right */
+  align-items: center;
+  padding: 0.5rem 2rem;
+  height: 7vh;
+  width: 70%;
+  z-index: 1000;
+  background-color: rgba(120, 120, 120, 0.25);
+  border-color: var(--dark-color);
+  transition: height 0.4s ease;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.header-nav::after,
+.ham-header-nav::after {
   content: "";
   position: absolute;
   top: 0;
@@ -88,10 +125,23 @@ nav,
   filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
-.nav-links {
-  gap: 2rem;
+/* Expanded state when open */
+.ham-header-nav.open {
+  height: 260px; /* adjust as needed */
+}
+
+/* Place nav links centered when open */
+.hamburger-nav-links {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  gap: 1.5rem;
   list-style: none;
   font-size: 1.5rem;
+  align-items: center;
+}
+
+.ham-header-nav.open .hamburger-nav-links {
+  display: flex; /* show only when expanded */
 }
 
 a {
@@ -236,7 +286,7 @@ p.subtitle {
 /* SECTIONS */
 
 section {
-  padding-top: 15vh;
+  padding-top: 13vh;
   height: 96vh;
   margin: 0 10rem;
   box-sizing: border-box;
@@ -491,6 +541,7 @@ video {
   margin-bottom: 15px;
   border-radius: 8px;
   display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* REGISTRY PAGE */

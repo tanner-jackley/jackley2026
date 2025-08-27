@@ -98,3 +98,9 @@
     font-size: 12px;
   }
 }
+
+@media screen and (max-height: 750px) {
+  .ham-header-nav {
+    height: 60px;
+  }
+}
