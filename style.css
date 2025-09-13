@@ -152,13 +152,13 @@ nav,
 }
 
 a {
-  color: var(--text-color);
+  color: var(--light-color);
   text-decoration: none;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 a:hover {
-  color: var(--light-color);
+  color: var(--dark-color);
   padding: 0.5rem;
   text-decoration: none;
 }
@@ -182,7 +182,7 @@ p.subtitle {
 }
 
 .logo a:hover {
-  color: var(--light-color);
+  color: var(--dark-color);
   padding: 0;
   cursor: pointer;
   text-decoration: none;
@@ -211,7 +211,7 @@ p.subtitle {
 .hamburger-icon span {
   height: 2px;
   width: 100%;
-  background-color: var(--text-color);
+  background-color: var(--light-color);
   transition: all 300ms ease-in-out;
 }
 
@@ -753,6 +753,10 @@ footer::after {
 footer p {
   text-align: center;
   color: var(--text-color);
+}
+
+footer a {
+  color: var(--font-color);
 }
 
 footer a:hover {
