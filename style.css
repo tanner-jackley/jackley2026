@@ -2,6 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
+@font-face {
+  font-family: 'Modernline Handwritting'; /* Choose a descriptive name for your font */
+  src: url('/modernline-personal-use.bold.otf') format('opentype'); /* Specify the path to your font file and its format */
+  font-weight: normal; /* Optional: Define font weight if applicable */
+  font-style: bold; /* Optional: Define font style if applicable */
+  font-display: swap; /* Optional: Controls how the font is displayed while loading */
+}
+
 :root {
   --font-family: "Playfair Display", serif;
   --gray-color: rgb(53, 53, 53);
@@ -345,6 +353,7 @@ section {
 }
 
 .hero-title {
+  font-family: "Modernline Handwritting", var(--font-family) !important;
   font-size: 4.5rem;
   object-fit: cover;
   display: block;
