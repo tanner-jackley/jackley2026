@@ -1,10 +1,10 @@
 /* GENERAL */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap");
 
 @font-face {
-  font-family: 'Modernline Handwritting'; /* Choose a descriptive name for your font */
-  src: url('/modernline-personal-use.bold.otf') format('opentype'); /* Specify the path to your font file and its format */
+  font-family: "Modernline Handwritting"; /* Choose a descriptive name for your font */
+  src: url("/modernline-personal-use.bold.otf") format("opentype"); /* Specify the path to your font file and its format */
   font-weight: normal; /* Optional: Define font weight if applicable */
   font-style: bold; /* Optional: Define font style if applicable */
   font-display: swap; /* Optional: Controls how the font is displayed while loading */
@@ -81,7 +81,7 @@ nav,
   transform: translateX(-50%);
   justify-content: space-around; /* keep logo left & menu right */
   align-items: center;
-  height: 7vh;
+  height: 60px;
   width: 70%;
   z-index: 1000;
   transition: height 0.4s ease;
@@ -104,7 +104,7 @@ nav,
   justify-content: space-between; /* keep logo left & menu right */
   align-items: center;
   padding: 0.5rem 2rem;
-  height: 7vh;
+  height: 60px;
   width: 70%;
   z-index: 1000;
   transition: height 0.4s ease;

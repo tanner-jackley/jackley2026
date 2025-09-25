@@ -106,7 +106,13 @@
 }
 
 @media screen and (max-height: 750px) {
-  .ham-header-nav {
-    height: 60px;
+  .details-background {
+    height: 90%;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .details-background {
+    gap: 1rem;
   }
 }
