@@ -1,3 +1,5 @@
+let nameNotFoundCount = 0;
+
 document.getElementById("form").addEventListener("submit", function (event) {
   document.getElementById("submit").classList.add("is-loading");
   event.preventDefault();
@@ -5,22 +7,38 @@ document.getElementById("form").addEventListener("submit", function (event) {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://script.google.com/macros/s/AKfycbyPKJfgkJuoWKFxbbtlcP01DZtSBdrbqLeO61gRj6Lvc_khhFIVzKH_3Xst4y-M8faN2g/exec?name=" +
+    "https://script.google.com/macros/s/AKfycbxoiwZddys4-bgjn2e8E84KYGbT3fOP8NsgOYQz2j1W8goktqyCkbpMocba5sDngkLjcA/exec?name=" +
       name,
     true
   );
+
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       document.getElementById("submit").classList.remove("is-loading");
       var idAndNames = xhr.responseText;
       if (idAndNames === "Name not found") {
-        document.getElementById(
-          "output"
-        ).innerHTML = `<div class="notification is-danger">Couldn't find guest name.</div>`;
+        nameNotFoundCount++;
+        if (nameNotFoundCount > 3) {
+          document.getElementById("output").innerHTML = `
+          <div class="notification is-danger">
+            We couldn't find your name. For help, contact tannerjackley@gmail.com or try again later.
+          </div>`;
+        } else {
+          document.getElementById("output").innerHTML = `
+            <div class="notification is-danger">
+              Couldn't find guest name. Please check your spelling and try again.
+            </div>`;
+        }
       } else if (idAndNames === "Already RSVPd") {
-        document.getElementById(
-          "output"
-        ).innerHTML = `<div class="notification is-danger">This guest has already submitted an RSVP.</div>`;
+        document.getElementById("output").innerHTML = `
+        <div class="notification is-danger">
+          This guest has already submitted an RSVP.
+        </div>`;
+      } else if (idAndNames === "Empty") {
+        document.getElementById("output").innerHTML = `
+          <div class="notification is-danger">
+            Please enter a name.
+          </div>`;
       } else {
         create_rsvpPage1(idAndNames);
       }
@@ -91,7 +109,7 @@ function create_rsvpPage1(idAndNames) {
 
 function submitForm(data) {
   const url =
-    "https://script.google.com/macros/s/AKfycbyPKJfgkJuoWKFxbbtlcP01DZtSBdrbqLeO61gRj6Lvc_khhFIVzKH_3Xst4y-M8faN2g/exec";
+    "https://script.google.com/macros/s/AKfycbxoiwZddys4-bgjn2e8E84KYGbT3fOP8NsgOYQz2j1W8goktqyCkbpMocba5sDngkLjcA/exec";
   const xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
