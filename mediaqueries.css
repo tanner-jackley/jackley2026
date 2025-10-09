@@ -109,6 +109,10 @@
   .details-background {
     height: 90%;
   }
+
+  section {
+    padding-top: 90px;
+  }
 }
 
 @media screen and (max-height: 500px) {

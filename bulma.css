@@ -7649,7 +7649,7 @@ label.panel-block:hover {
   margin-top: -0.75rem;
 }
 .columns:last-child {
-  margin-bottom: -0.75rem;
+  margin-bottom: 2rem;
 }
 .columns:not(:last-child) {
   margin-bottom: calc(1.5rem - 0.75rem);
