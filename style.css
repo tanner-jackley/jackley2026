@@ -581,16 +581,24 @@ video {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .registry-container {
   padding: 1.5rem;
-  flex: 1 1 45%;
+  flex: 1 1 300px;
+  aspect-ratio: 2 / 1;
   background: var(--light-color);
   border-radius: 2rem;
   text-align: center;
   min-width: 250px;
+  max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .registry-container:hover {
