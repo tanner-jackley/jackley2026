@@ -66,7 +66,7 @@ function create_rsvpPage1(idAndNames) {
 
   document.getElementById("entireForm").innerHTML = `
   <div class="content">
-      <p class="label" style="color: var(--dark-color)">We found your RSVP!</p>
+      <p class="label" style="color: var(--dark-color)">We found your RSVP! (If you cannot attend, leave unchecked and submit)</p>
       ${data
         .map(
           (person) => `
