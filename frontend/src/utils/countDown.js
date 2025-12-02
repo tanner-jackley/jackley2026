@@ -1,4 +1,4 @@
-class Countdown {
+export class Countdown {
   get TIMESTAMP_SECOND() {
     return 1000;
   }
