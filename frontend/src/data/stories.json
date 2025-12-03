@@ -1,0 +1,93 @@
+[
+  {
+    "position": "left",
+    "src": "src/assets/story/062415.JPEG",
+    "date": "06.25.15",
+    "description": "Lucy and Tanner have known each other for over 10 years! Their families first met at church in Blue Springs, Missouri. The Sprinks lived in London from 2015-2020. The Jackleys went on a mission trip to London in 2015 and visited the Sprinks while they were there. Little did they know that they would be getting married 11 years later!",
+    "video": false
+  },
+  {
+    "position": "right",
+    "src": "src/assets/story/082122.JPG",
+    "date": "08.21.22",
+    "description": "After reconnecting in the summer of 2022, Lucy and Tanner went on their first date at Ice Cream Cafe in Blue Springs, Missouri. They spent the afternoon getting to know each other better over ice cream and a walk around Burrus Old Mill Park.",
+    "video": false
+  },
+  {
+    "position": "left",
+    "src": "src/assets/story/111122.JPG",
+    "date": "11.11.22",
+    "description": "On November 11, 2022, Tanner asked Lucy to be his girlfriend at Summit Grill, and they never looked back since! After dinner they went to see Black Panther at the movies.",
+    "video": false
+  },
+  {
+    "position": "right",
+    "src": "src/assets/story/012123.JPG",
+    "date": "01.21.23",
+    "description": "Over the winter, Lucy and Tanner each committed to go to Northwest Missouri State University! On January 21, 2023, they went with their families to see the Bearcats play basketball.",
+    "video": false
+  },
+  {
+    "position": "left",
+    "src": "src/assets/story/042223.JPG",
+    "date": "04.22.23",
+    "description": "Lucy and Tanner went to both Blue Springs South's and Blue Springs' proms together!",
+    "video": false
+  },
+  {
+    "position": "right",
+    "src": "src/assets/story/052423.JPG",
+    "date": "05.24.23",
+    "description": "In May of 2023, Lucy graduated from Blue Springs South High School and Tanner graduated from Blue Springs High School. High school sweethearts!",
+    "video": false
+  },
+  {
+    "position": "left",
+    "src": "src/assets/story/081923.JPG",
+    "date": "08.19.23",
+    "description": "Lucy and Tanner's first day of being at the same school! The start of their Bearcat adventures together.",
+    "video": false
+  },
+  {
+    "position": "right",
+    "src": "src/assets/story/111123.JPG",
+    "date": "11.11.23",
+    "description": "First Anniversary of being a couple! They celebrated by going to Summit Grill again and ice skating!",
+    "video": false
+  },
+  {
+    "position": "left",
+    "src": "src/assets/story/111124.JPG",
+    "date": "11.11.24",
+    "description": "Second Anniversary of dating! It's a yearly tradition for them to go to Summit Grill and get chicken tenders.",
+    "video": false
+  },
+  {
+    "position": "right",
+    "src": "src/assets/story/121924.PNG",
+    "date": "12.19.24",
+    "description": "The day that Tanner asked Lucy's dad for permission to marry her!",
+    "video": false
+  },
+  {
+    "position": "left",
+    "src": "src/assets/story/062825.JPG",
+    "date": "06.28.25",
+    "description": "On June 28th, 2025, Tanner asked Lucy to marry him at Loose Park! Later that day they celebrated with family and friends.",
+    "video": false
+  },
+  {
+    "position": "right",
+    "src": "src/assets/story/engagement-suprise-video.mp4",
+    "date": "06.29.25",
+    "description": "The sunday after the proposal, Lucy and Tanner got to suprise everyone at church with the news! Stick to the end to see the suprise announcement from the day before.",
+    "video": true
+  },
+  {
+    "position": "left",
+    "src": "src/assets/story/053026.JPG",
+    "date": "05.30.26",
+    "description": "On May 30th, 2026, Lucy and Tanner will get married at their home church. They are so excited to continue the relationship that God has given them and to celebrate with all of their family and friends!",
+    "video": false
+  }
+]
