@@ -7,7 +7,7 @@ function Home() {
     <>
       <section id="main">
         <img
-          src="/src/assets/T99A7629.jpg"
+          src="/src/assets/home-background.jpg"
           alt="Lucy and Tanner Engagement"
           className="hero-image"
         />

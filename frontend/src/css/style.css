@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Modernline Handwritting"; /* Choose a descriptive name for your font */
-  src: url("/modernline-personal-use.bold.otf") format("opentype"); /* Specify the path to your font file and its format */
+  src: url("/src/assets/modernline-personal-use.bold.otf") format("opentype"); /* Specify the path to your font file and its format */
   font-weight: normal; /* Optional: Define font weight if applicable */
   font-style: bold; /* Optional: Define font style if applicable */
   font-display: swap; /* Optional: Controls how the font is displayed while loading */
