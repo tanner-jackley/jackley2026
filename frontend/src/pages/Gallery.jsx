@@ -13,8 +13,8 @@ function Gallery() {
           <p>Photography by Ruth Loftis</p>
         </div>
         <div className="gallery">
-          {Object.values(images).map((img, i) => (
-            <img key={i} src={img.default} alt={`gallery-${i}`} />
+          {Object.values(images).map((img, key) => (
+            <img key={key} src={img.default} alt={`gallery-${key}`} />
           ))}
         </div>
       </section>

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Target",
+    "url": "https://www.target.com/gift-registry/gift/thejackleys",
+    "src": "src/assets/target-logo.png"
+  },
+  {
+    "name": "Crate & Barrel",
+    "url": "https://www.crateandbarrel.com/gift-registry/lucy-sprink/r7398632",
+    "src": "src/assets/Crate-Barrel-Logo.png"
+  },
+  {
+    "name": "Amazon",
+    "url": "https://www.amazon.com/wedding/share/thejackleys2026",
+    "src": "src/assets/Amazon-Logo.png"
+  }
+]

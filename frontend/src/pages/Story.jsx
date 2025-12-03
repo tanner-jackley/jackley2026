@@ -12,8 +12,8 @@ function Story() {
           <h1 className="story-title">Our Story</h1>
         </div>
         <div className="timeline">
-          {stories.map((story, index) => (
-            <StoryCard key={index} story={story} />
+          {stories.map((story, key) => (
+            <StoryCard key={key} story={story} />
           ))}
         </div>
       </section>
