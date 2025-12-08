@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Countdown } from "../utils/countDown.js";
 import { useEffect } from "react";
+import Navigation from "./Navigation.jsx";
 
 function initializeCountdown() {
   console.log("Running countdown init...");
@@ -46,18 +47,7 @@ function Footer() {
       <nav className="footer-nav">
         <div className="nav-links-container">
           <ul className="nav-links">
-            <li>
-              <Link to="/story">Our Story</Link>
-            </li>
-            <li>
-              <Link to="/gallery">Gallery</Link>
-            </li>
-            <li>
-              <Link to="/registry">Registry</Link>
-            </li>
-            <li>
-              <Link to="/rsvp">RSVP</Link>
-            </li>
+            <Navigation />
           </ul>
         </div>
       </nav>

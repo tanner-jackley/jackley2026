@@ -1,0 +1,6 @@
+[
+  { "name": "Our Story", "path": "/story" },
+  { "name": "Gallery", "path": "/gallery" },
+  { "name": "Registry", "path": "/registry" },
+  { "name": "RSVP", "path": "/rsvp" }
+]

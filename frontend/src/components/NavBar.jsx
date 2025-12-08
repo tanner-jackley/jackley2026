@@ -1,43 +1,49 @@
 import { Link } from "react-router-dom";
-
-function toggleMenu() {
-  const icon = document.querySelector(".hamburger-icon");
-  const nav = document.querySelector("#hamburger-nav");
-  icon.classList.toggle("open");
-  nav.classList.toggle("open");
-}
+import { useState } from "react";
+import navigation from "../data/navigation.json";
+import Navigation from "./Navigation.jsx";
 
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <nav id="desktop-nav" className="header-nav">
         <div className="logo">
-          <Link to="/">Lucy & Tanner</Link>
+          <Link to="/" onClick={scrollToTop}>
+            Lucy & Tanner
+          </Link>
         </div>
         <div>
           <ul className="nav-links">
-            <li>
-              <Link to="/story">Our Story</Link>
-            </li>
-            <li>
-              <Link to="/gallery">Gallery</Link>
-            </li>
-            <li>
-              <Link to="/registry">Registry</Link>
-            </li>
-            <li>
-              <Link to="/rsvp">RSVP</Link>
-            </li>
+            <Navigation toggle={toggle} />
           </ul>
         </div>
       </nav>
-      <nav id="hamburger-nav" className="ham-header-nav">
+      <nav
+        id="hamburger-nav"
+        className={`ham-header-nav${isOpen ? " open" : ""}`}
+      >
         <div className="top-row">
           <div className="logo">
-            <Link to="/">L & T</Link>
+            <Link to="/" onClick={scrollToTop}>
+              L & T
+            </Link>
           </div>
           <div className="hamburger-menu">
-            <div className="hamburger-icon" onClick={toggleMenu}>
+            <div
+              className={`hamburger-icon${isOpen ? " open" : ""}`}
+              onClick={toggle}
+            >
               <span></span>
               <span></span>
               <span></span>
@@ -45,18 +51,7 @@ function NavBar() {
           </div>
         </div>
         <ul className="hamburger-nav-links">
-          <li>
-            <Link to="/story">Our Story</Link>
-          </li>
-          <li>
-            <Link to="/gallery">Gallery</Link>
-          </li>
-          <li>
-            <Link to="/registry">Registry</Link>
-          </li>
-          <li>
-            <Link to="/rsvp">RSVP</Link>
-          </li>
+          <Navigation toggle={toggle} />
         </ul>
       </nav>
     </>
