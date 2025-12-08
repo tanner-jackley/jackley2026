@@ -1,5 +1,3 @@
-import "../css/App.css";
-import "../css/index.css";
 import RSVPForm from "../components/RSVPForm.jsx";
 
 function RSVP() {

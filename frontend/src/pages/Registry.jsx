@@ -1,6 +1,3 @@
-import "../css/App.css";
-import "../css/bulma.css";
-import "../css/index.css";
 import RegistryCard from "../components/RegistryCard.jsx";
 import registries from "../data/registries.json";
 

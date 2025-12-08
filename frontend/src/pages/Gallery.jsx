@@ -1,7 +1,3 @@
-import "../css/App.css";
-import "../css/bulma.css";
-import "../css/index.css";
-
 const images = import.meta.glob("/src/assets/gallery/*.jpg", { eager: true });
 
 function Gallery() {

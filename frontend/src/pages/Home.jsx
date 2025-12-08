@@ -1,7 +1,3 @@
-import "../css/App.css";
-import "../css/bulma.css";
-import "../css/index.css";
-
 function Home() {
   return (
     <>

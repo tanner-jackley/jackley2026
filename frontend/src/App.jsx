@@ -1,7 +1,4 @@
 import { useState } from "react";
-import "./css/App.css";
-import "./css/bulma.css";
-import "./css/index.css";
 import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
 import { Routes, Route } from "react-router-dom";

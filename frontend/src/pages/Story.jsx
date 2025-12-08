@@ -1,6 +1,3 @@
-import "../css/App.css";
-import "../css/bulma.css";
-import "../css/index.css";
 import StoryCard from "../components/StoryCard.jsx";
 import stories from "../data/stories.json";
 

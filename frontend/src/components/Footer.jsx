@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import "../css/App.css";
-import "../css/bulma.css";
-import "../css/index.css";
 import { Countdown } from "../utils/countDown.js";
 import { useEffect } from "react";
 
