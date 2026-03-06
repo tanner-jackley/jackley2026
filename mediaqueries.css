@@ -90,6 +90,11 @@
     height: 75%;
   }
 
+  .rd-details-background {
+    width: 75%;
+    height: 85%;
+  }
+
   .nav-links {
     flex-direction: column;
     align-items: center;
@@ -105,6 +110,11 @@
 @media screen and (max-height: 750px) {
   .details-background {
     height: 90%;
+  }
+
+  .rd-details-background {
+    height: 90%;
+    gap: 1rem;
   }
 
   section {

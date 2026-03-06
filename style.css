@@ -73,7 +73,8 @@ nav,
   backdrop-filter: blur(2px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.2),
     inset 0 4px 20px rgba(255, 255, 255, 0.3);
   position: fixed;
   top: 1rem;
@@ -94,7 +95,8 @@ nav,
   backdrop-filter: blur(2px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.2),
     inset 0 4px 20px rgba(255, 255, 255, 0.3);
   position: fixed;
   top: 1rem;
@@ -124,7 +126,8 @@ nav,
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2rem;
   backdrop-filter: blur(1px);
-  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+  box-shadow:
+    inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
     inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
   opacity: 0.6;
   z-index: -1;
@@ -740,7 +743,8 @@ footer {
   backdrop-filter: blur(2px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 2rem 2rem 0 0;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.2),
     inset 0 4px 20px rgba(255, 255, 255, 0.3);
   top: 1rem;
   justify-content: space-around;
@@ -758,7 +762,8 @@ footer::after {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2rem 2rem 0 0;
   backdrop-filter: blur(1px);
-  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+  box-shadow:
+    inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
     inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
   opacity: 0.6;
   z-index: -1;
@@ -994,4 +999,36 @@ footer a:hover {
     transform: rotateX(-180deg);
     z-index: 1;
   }
+}
+
+.add-top-padding {
+  padding-top: 2.5rem;
+}
+
+.rd-btn {
+  margin-top: 1rem;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 0.5rem;
+  border-color: var(--dark-color);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
+}
+
+.rd-details-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-color);
+  padding: 1rem;
+  gap: 2rem;
+  text-align: center;
+  width: 60%;
+  height: 75%;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
