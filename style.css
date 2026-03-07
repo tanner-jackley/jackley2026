@@ -1032,3 +1032,9 @@ footer a:hover {
   height: 75%;
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
+
+.rd-details-background h1,
+.rd-details-background p {
+  color: var(--dark-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
