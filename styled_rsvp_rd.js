@@ -7,7 +7,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://script.google.com/macros/s/AKfycbzdesSSFgvOT34WiTfbxFiFmBbzMpIJmBKbETp0rbeBcXltRy7Z8_D23N2ZfM8oKVT0/exec?name=" +
+    "https://script.google.com/macros/s/AKfycbwinWEPzGX4WC3S92JKgwtTFzsXEZk62kirn86-_e5xAAqAOhjMxW8JYAOnFEJz8kGA/exec?name=" +
       name,
     true,
   );
@@ -109,7 +109,7 @@ function create_rsvpPage1(idAndNames) {
 
 function submitForm(data) {
   const url =
-    "https://script.google.com/macros/s/AKfycbzdesSSFgvOT34WiTfbxFiFmBbzMpIJmBKbETp0rbeBcXltRy7Z8_D23N2ZfM8oKVT0/exec";
+    "https://script.google.com/macros/s/AKfycbwinWEPzGX4WC3S92JKgwtTFzsXEZk62kirn86-_e5xAAqAOhjMxW8JYAOnFEJz8kGA/exec";
   const xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
